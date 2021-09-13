@@ -1,13 +1,6 @@
-#### A. BENJAMIN-TREGO
-#### DRAGONS AND DEMONS - GAME NIGHT CALCULATOR
-
-
-
-
 
 # CREATE EMPTY LIST TO STORE GAMER INFORMATION AND AVAILABILITY
 gamers = []
-
 
 
 # FUNCTION - ADD NEW GAMERS TO EXISTING LIST
@@ -18,7 +11,6 @@ def add_gamer(gamer, gamers_list):
         print("Missing input. Please try again.")
         
     return gamers_list
-
 
 
 # CREATE LIST OF ALL GAMERS
@@ -37,7 +29,6 @@ add_gamer({'name':'James Barnes Jr.','availability': ["Tuesday", "Wednesday", "T
 add_gamer({'name':'Michel Trujillo','availability': ["Monday", "Tuesday", "Wednesday"]}, gamers)
 
 
-
 # CREATE FREQUENCY TABLE
 def build_daily_frequency_table():
     dict = {"Monday": 0, "Tuesday": 0, "Wednesday": 0, "Thursday": 0,
@@ -45,10 +36,8 @@ def build_daily_frequency_table():
     return dict
 
 
-
 # STORE TABLE
 count_availability = build_daily_frequency_table()
-
 
 
 # FUNCTION TO CALCULATE AVAILABILITY 
@@ -73,12 +62,10 @@ def calculate_availability(gamers_list, available_frequency):
     return available_frequency
 
 
-
 # CALCULATE AVAILABILITY AND POPULATE TABLE
 calculate_availability(gamers, count_availability)
 
 print(count_availability)
-
 
 
 # FUNCTION TO DETERMINE NIGHT WITH MOST AVAILABILITY
@@ -96,12 +83,10 @@ def find_best_night(availability_table):
     return best_night 
 
 
-
 # DETERMINE BEST GAME NIGHT AND PRINT
 game_night = find_best_night(count_availability)
 
 print(game_night)
-
 
 
 # FUNCTION TO CREATE LIST OF GAMERS AVAILABLE ON GIVEN NIGHT
@@ -117,12 +102,9 @@ def available_on_night(gamers_list, day):
     return gamers_available
 
 
-
 # DETERMINE GAMERS AVAILABLE ON GIVEN NIGHT AND PRINT LIST OF POTENTIAL ATTENDEES
 attending_game_night = available_on_night(gamers, game_night)
 print("List of potential attendees: ", attending_game_night)
-
-
 
 
 # CREATE EMAIL
@@ -135,7 +117,6 @@ form_email = "Hi, {}! {} will be played on {}. Hope to see you there!"
 print(form_email.format(name, game, day_of_week))
 
 
-
 # CREATE EMAIL FUNCTION
 def send_email(gamers_who_can_attend, day, game):
     message = ""
@@ -144,7 +125,6 @@ def send_email(gamers_who_can_attend, day, game):
         print(message)
 
 send_email(attending_game_night, game_night, "Dragons and Demons")
-
 
 
 # CALL FUNCTIONS TO DETERMINE NEXT BEST NIGHT 
@@ -157,7 +137,6 @@ calculate_availability(unable_to_attend_best_night, second_night_availability)
 second_night = find_best_night(second_night_availability)
 
 available_second_game_night = available_on_night(gamers, second_night)
-
 
 
 # SEND EMAIL TO AVAILABLE ATTENDEES FOR SECOND GAME NIGHT
